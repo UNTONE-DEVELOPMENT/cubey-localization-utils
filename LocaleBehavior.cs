@@ -6,6 +6,7 @@ public class LocaleBehavior : MonoBehaviour
 {
     public string locale;
     public string name;
+    public string section = "game";
 
     public void Start()
     {

@@ -7,10 +7,10 @@ public class LocalizationSetText : LocaleBehavior
 {
     public Text thisText;
     public string[] fields;
-
+    
     public override void SetText(string locale)
     {
         Debug.Log("updating text!!!");
-        thisText.text = Localization.GetText(locale, name, fields);
+        thisText.text = Localization.GetText(locale, name, fields, section);
     }
 }
