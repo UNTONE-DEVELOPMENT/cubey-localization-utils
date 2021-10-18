@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public static class Localization
@@ -29,10 +30,8 @@ public static class Localization
             {
                 TextAsset thisLocaleFile = Resources.Load<TextAsset>("locales/" + folder + "/" + locale + "");
                 Debug.Log("locales/" + folder + "/" + locale + "");
-                string[] lines = thisLocaleFile.text.Split(
-    new string[] { "\r\n", "\r", "\n" },
-    StringSplitOptions.None
-);
+                string[] splitter = new string[] { "\r\n", "\r", "\n" };
+                string[] lines = Regex.Split(thisLocaleFile.text, "\n|\r|\r\n");
                 foreach (string line in lines)
                 {
                     if (line.Contains("="))
@@ -40,15 +39,17 @@ public static class Localization
                         string key = "";
                         string value = "";
                         Debug.Log(line);
-                        string[] split = line.Split('=');
+                        string[] split = line.Split(new[] { '=' }, 2);
                         key = split[0];
-                        value = split[1].Replace("\n", "").Replace("\r", "").Substring(1, split[1].Length - 2);
+                        Debug.Log(split[0] + ":" + split[1]);
+                        value = split[1].Substring(1, split[1].Length - 3);
 
                         localeString thisString;
                         thisString.locale = locale;
                         thisString.section = folder;
 
                         value = value.Replace("\\n", "\n");
+                        //value = value.Replace("/", "/");
                         thisString.content = value;
                         thisString.name = key;
 
