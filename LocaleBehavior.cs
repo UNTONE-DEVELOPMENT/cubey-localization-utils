@@ -37,7 +37,6 @@ public class LocaleBehavior : MonoBehaviour
 
     public void ChangeLocale(string newLocale)
     {
-        Debug.Log("setting locale in LocaleBehavior");
         locale = newLocale;
         SetText(newLocale);
     }
