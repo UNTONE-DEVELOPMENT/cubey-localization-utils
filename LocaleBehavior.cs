@@ -16,6 +16,12 @@ public class LocaleBehavior : MonoBehaviour
         //Localization.localeBehaviors.Add(this);
         //Debug.Log("[LOCALEBEHAVIOR] Started");
         //ChangeLocale(Localization.currentLocale);
+        aStart();
+    }
+
+    public virtual void aStart()
+    {
+
     }
 
     public void Update()
