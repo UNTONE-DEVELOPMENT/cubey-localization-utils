@@ -20,7 +20,7 @@ public static class Localization
 
     public static List<localeString> localeStrings;
     public static string[] folders = { "game", "general" };
-    public static string[] locales = { "en_GB", "nl_NL", "it_IT" };
+    public static string[] locales = { "en_GB", "nl_NL", "it_IT", "ro_RO" };
     public static void LoadLocales()
     {
         localeStrings = new List<localeString>();
