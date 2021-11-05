@@ -5,7 +5,7 @@ using UnityEngine;
 public class LocaleBehavior : MonoBehaviour
 {
     public string locale;
-    public string name;
+    new public string name;
     public string section = "game";
 
     bool added = false;

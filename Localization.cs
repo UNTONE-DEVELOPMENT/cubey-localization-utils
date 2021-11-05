@@ -82,7 +82,6 @@ public static class Localization
         {
             return content;
         }
-        return null;
     }
 
     public static string GetText(string locale, string name, string[] fields, string file = "game")
