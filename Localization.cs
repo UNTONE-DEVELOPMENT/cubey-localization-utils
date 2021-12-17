@@ -29,6 +29,7 @@ public static class Localization
             foreach(string locale in locales)
             {
                 TextAsset thisLocaleFile = Resources.Load<TextAsset>("locales/" + folder + "/" + locale + "");
+                Debug.Log("loading locale: " + folder + "/" + locale);
                 string[] splitter = new string[] { "\r\n", "\r", "\n" };
                 string[] lines = Regex.Split(thisLocaleFile.text, "\n|\r|\r\n");
                 foreach (string line in lines)
