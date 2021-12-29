@@ -63,7 +63,7 @@ public static class Localization
         currentLocale = locale;
         foreach(LocaleBehavior obj in localeBehaviors)
         {
-            obj.ChangeLocale(locale);
+            obj.ChangeLocale();
         }
     }
 
@@ -74,6 +74,7 @@ public static class Localization
             int index = 0;
             foreach(string field in fields)
             {
+                content = content.Replace("{username}", "Cubey");
                 content = content.Replace("{" + index.ToString() + "}", fields[index]);
                 index++;
             }

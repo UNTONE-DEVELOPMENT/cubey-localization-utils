@@ -16,8 +16,8 @@ public class LocalizationSetText : LocaleBehavior
         }
     }
 
-    public override void SetText(string locale)
+    public override void SetText()
     {
-        thisText.text = Localization.GetText(locale, name, fields, section);
+        thisText.text = Localization.GetTextFromCurrentLocale(name, fields, section);
     }
 }

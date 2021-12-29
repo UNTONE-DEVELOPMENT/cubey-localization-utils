@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LocaleBehavior : MonoBehaviour
 {
-    public string locale;
     new public string name;
     public string section = "game";
 
@@ -32,7 +31,7 @@ public class LocaleBehavior : MonoBehaviour
             {
                 Localization.localeBehaviors.Add(this);
                 added = true;
-                ChangeLocale(Localization.currentLocale);
+                ChangeLocale();
             }
         }
         catch
@@ -41,13 +40,12 @@ public class LocaleBehavior : MonoBehaviour
         }
     }
 
-    public void ChangeLocale(string newLocale)
+    public void ChangeLocale()
     {
-        locale = newLocale;
-        SetText(newLocale);
+        SetText();
     }
 
-    public virtual void SetText(string newLocale)
+    public virtual void SetText()
     {
 
     }
