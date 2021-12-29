@@ -119,4 +119,9 @@ public static class Localization
         // oh fuck. it doesn't exist. let's return null
         return null;
     }
+
+    public static string GetTextFromCurrentLocale(string name, string[] fields, string file = "game")
+    {
+        return GetText(currentLocale, name, fields, file);
+    }
 }
